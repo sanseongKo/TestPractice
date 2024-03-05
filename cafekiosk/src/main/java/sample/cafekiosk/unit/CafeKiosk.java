@@ -3,6 +3,7 @@ package sample.cafekiosk.unit;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import lombok.Getter;
@@ -37,11 +38,6 @@ public class CafeKiosk {
         beverages.clear();
     }
 
-    public int calculateTotalPrice() {
-        int totalPrice = beverages.stream().mapToInt(Beverage::getPrice).sum();
-        return totalPrice;
-    }
-
     public Order createOrder() {
         LocalDateTime currentDateTime = LocalDateTime.now();
         LocalTime currentTime = currentDateTime.toLocalTime();
@@ -59,5 +55,9 @@ public class CafeKiosk {
         }
 
         return new Order(currentDateTime, beverages);
+    }
+
+    public int calculateTotalPrice() {
+        return  beverages.stream().mapToInt(Beverage::getPrice).sum();
     }
 }
