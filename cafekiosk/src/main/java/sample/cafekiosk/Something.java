@@ -230,4 +230,5 @@ Mock은 행위를 검증한다. ex) 이 메서드가 어떤 것을 했을 때 �
 
 /*
 BDD Mockito
+-> Mockito를 상속받아 사용하고 모든 동작이 동일한데, BDD 스타일로 given when then 에 맞춰 사용할 수 있도록 만들었을 뿐이다.
  */
