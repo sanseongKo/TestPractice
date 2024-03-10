@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import sample.cafekiosk.spring.client.mail.MailSendClient;
 import sample.cafekiosk.spring.domain.history.mail.MailSendHistory;
 import sample.cafekiosk.spring.domain.history.mail.MailSendHistoryRepository;
-import sample.cafekiosk.spring.domain.order.OrderRepository;
 
 @Service
 @RequiredArgsConstructor
