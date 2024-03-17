@@ -10,5 +10,5 @@ import sample.cafekiosk.spring.client.mail.MailSendClient;
 public abstract class IntegrationTestSupport {
 
     @MockBean
-    private MailSendClient mailSendClient;
+    protected MailSendClient mailSendClient;
 }

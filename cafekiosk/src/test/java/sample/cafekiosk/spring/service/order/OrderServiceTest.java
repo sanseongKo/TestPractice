@@ -11,6 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import sample.cafekiosk.spring.api.IntegrationTestSupport;
 import sample.cafekiosk.spring.api.controller.order.request.OrderCreateRequest;
 import sample.cafekiosk.spring.api.service.order.OrderService;
 import sample.cafekiosk.spring.domain.order.OrderRepository;
@@ -25,9 +26,8 @@ import sample.cafekiosk.spring.api.service.order.response.OrderResponse;
 
 import static org.assertj.core.api.Assertions.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
-class OrderServiceTest {
+
+class OrderServiceTest extends IntegrationTestSupport {
 
     @Autowired
     private OrderService orderService;
@@ -46,6 +46,7 @@ class OrderServiceTest {
 
     @AfterEach
     void tearDown() {
+        stockRepository.deleteAllInBatch();
         orderProductRepository.deleteAllInBatch();
         productRepository.deleteAllInBatch();
         orderRepository.deleteAllInBatch();
