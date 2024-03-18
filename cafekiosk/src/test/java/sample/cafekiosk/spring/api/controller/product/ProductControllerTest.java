@@ -3,20 +3,27 @@ package sample.cafekiosk.spring.api.controller.product;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.BDDMockito;
 import org.springframework.http.MediaType;
+import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import java.util.List;
 
 import sample.cafekiosk.spring.api.ControllerTestSupport;
 import sample.cafekiosk.spring.api.controller.product.dto.ProductCreateRequest;
+import sample.cafekiosk.spring.api.service.product.dto.ProductCreateServiceRequest;
+import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
 import sample.cafekiosk.spring.domain.product.ProductSellingStatus;
 import sample.cafekiosk.spring.domain.product.ProductType;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.when;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
+import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 
 class ProductControllerTest extends ControllerTestSupport {
 
